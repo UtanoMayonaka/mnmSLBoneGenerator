@@ -16,13 +16,18 @@ Copy the aveter_skeleton.xml from Second Life viewer directory.
 You can find the aveter_skeleton.xml inside a folder like this,  
 eg. C:\Program Files\SecondLifeViewer\character
 
-Copy the aveter_skeleton.xml file to the plugin folder.
-You can find the plugin folder like this,
+Copy the aveter_skeleton.xml file to the plugin folder.  
+You can find the plugin folder like this,  
 eg. C:\Users\[user-name]\AppData\Roaming\Blender Foundation\Blender\3.3\scripts\addons\mnmSLBoneGenerator-master
 
 This plugin are find the xml file and enabled generate button.
 
 ![3DVenabled generate button](assets/image2.jpg "enabled generate button")
 
+## Bone groups
 
+Each generated bone is set in a bone group.
 
+Base bone is set "Base" bone group and layer 2(Blue color).  
+Extended bones is set "Extended" bone group and layer 3(Green color).  
+Collision volume is set "Collision" bone group and layer 7(Orange color).  
