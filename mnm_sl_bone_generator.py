@@ -38,7 +38,7 @@ def parse_elements( element , armature ):
             bn.use_connect = strtobool(bone.get('connected'))
             bn.layers[1] = bone.get("support") == 'base'
             bn.layers[2] = bone.get("support") != 'base'
-            bn['prop'] = 'Base' if bone.get("support") != 'base' else 'Extended'
+            bn['prop'] = 'Base' if bone.get("support") == 'base' else 'Extended'
         else:
             pos = Vector(np.fromstring(bone.get('pos'), sep=' '))
             bn.layers[0] = False
@@ -85,14 +85,14 @@ def main(self, context):
     else:
         armature.pose.bone_groups[0].name = 'Base'
     #endif
-    armature.pose.bone_groups[0].color_set = 'THEME03'
+    armature.pose.bone_groups[0].color_set = 'THEME04'
 
     if len(armature.pose.bone_groups) < 2:
         armature.pose.bone_groups.new(name='Extended')
     else:
         armature.pose.bone_groups[1].name = 'Extended'
     #endif
-    armature.pose.bone_groups[1].color_set = 'THEME04'
+    armature.pose.bone_groups[1].color_set = 'THEME03'
 
     if len(armature.pose.bone_groups) < 3:
         armature.pose.bone_groups.new(name='Collision')
