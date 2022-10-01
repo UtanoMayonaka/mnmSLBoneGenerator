@@ -63,11 +63,16 @@ def parse_elements( element , armature ):
 
 
 def main(self, context):
+    if context.view_layer.objects.active != None:
+        bpy.ops.object.mode_set(mode='OBJECT', toggle=False)
+        bpy.ops.object.select_all(action='DESELECT')
+
     armature = None
     for collection in bpy.data.collections:
         for obj in collection.all_objects:
             if obj.type == 'ARMATURE':
                 armature = obj
+                bpy.context.view_layer.objects.active = armature
             #endif
         #endfor
     #endfor
@@ -104,7 +109,7 @@ def main(self, context):
 
 
     if __name__ == '__main__':
-        #xmlpath = "D:\\Users\\Utano\\AppData\\Roaming\Blender Foundation\\Blender\\3.3\\scripts\\addons\\mnmSLBoneGenerator\\avatar_skeleton.xml"
+#        xmlpath = "D:\\Users\\Utano\\AppData\\Roaming\Blender Foundation\\Blender\\3.3\\scripts\\addons\\mnmSLBoneGenerator\\avatar_skeleton.xml"
         print("local test")
     else:
         xmlpath = os.path.dirname(__file__) + '/avatar_skeleton.xml'
