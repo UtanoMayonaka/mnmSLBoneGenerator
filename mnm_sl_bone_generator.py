@@ -102,8 +102,8 @@ def main(self, context):
     armature.pose.bone_groups[2].color_set = 'THEME02'
 
 
-#    xmlpath = os.path.dirname(__file__) + '/avatar_skeleton.xml'
-    xmlpath = "D:\\Users\\Utano\\AppData\\Roaming\Blender Foundation\\Blender\\3.3\\scripts\\addons\\mnmSLBoneGenerator\\avatar_skeleton.xml"
+    xmlpath = os.path.dirname(__file__) + '/avatar_skeleton.xml'
+#    xmlpath = "D:\\Users\\Utano\\AppData\\Roaming\Blender Foundation\\Blender\\3.3\\scripts\\addons\\mnmSLBoneGenerator\\avatar_skeleton.xml"
     tree = ET.parse(xmlpath)
     root = tree.getroot()
 
