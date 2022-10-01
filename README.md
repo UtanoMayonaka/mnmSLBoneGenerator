@@ -31,3 +31,5 @@ Each generated bone is set in a bone group.
 Base bone is set "Base" bone group and layer 2(Blue color).  
 Extended bones is set "Extended" bone group and layer 3(Green color).  
 Collision volume is set "Collision" bone group and layer 7(Orange color).  
+
+![bone group and layer](assets/image3.jpg "bone group and layer")
