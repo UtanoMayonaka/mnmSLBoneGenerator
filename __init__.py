@@ -4,7 +4,7 @@ ADDON_OPERATOR_IDNAME = "mnm.slbg"
 bl_info = {
     "name": "SL Bone Generator",
     "author": "Utano Mayonaka",
-    "version": (1, 0, 1),
+    "version": (1, 1, 0),
     "blender": (3, 3, 0),
     "support": "TESTING",
     "location": "View3D > Toolshelf > MnMSLbg",

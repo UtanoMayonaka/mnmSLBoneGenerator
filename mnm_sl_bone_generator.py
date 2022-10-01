@@ -100,10 +100,15 @@ def main(self, context):
         armature.pose.bone_groups[2].name = 'Collision'
     #endif
     armature.pose.bone_groups[2].color_set = 'THEME02'
+    armature.show_in_front = True
 
 
-    xmlpath = os.path.dirname(__file__) + '/avatar_skeleton.xml'
-#    xmlpath = "D:\\Users\\Utano\\AppData\\Roaming\Blender Foundation\\Blender\\3.3\\scripts\\addons\\mnmSLBoneGenerator\\avatar_skeleton.xml"
+    if __name__ == '__main__':
+        #xmlpath = "D:\\Users\\Utano\\AppData\\Roaming\Blender Foundation\\Blender\\3.3\\scripts\\addons\\mnmSLBoneGenerator\\avatar_skeleton.xml"
+        print("local test")
+    else:
+        xmlpath = os.path.dirname(__file__) + '/avatar_skeleton.xml'
+
     tree = ET.parse(xmlpath)
     root = tree.getroot()
 
@@ -127,6 +132,8 @@ def main(self, context):
             #endif
         else:
             bone.tail += bone.head
+        # Roll X-Axis calculation
+        bone.align_roll(Vector((1.0,0.0,0.0)))
         #endif
     #endfor
     bpy.ops.object.mode_set(mode='OBJECT', toggle=False)
