@@ -4,30 +4,36 @@ ADDON_OPERATOR_IDNAME = "mnm.slbg"
 bl_info = {
     "name": "SL Bone Generator",
     "author": "Utano Mayonaka",
-    "version": (1, 1, 0),
-    "blender": (3, 3, 0),
-    "support": "TESTING",
+    "version": (1, 2, 0),
+    "blender": (4, 0, 0),
+    "support": "COMMUNITY",
     "location": "View3D > Toolshelf > MnMSLbg",
-    "description": "Add a Armature, and Generate bones group from SecondLife bento version",
+    "description": "Add a Armature, and Generate bones from SecondLife bento version (need to avatar_skeleton.xml).",
     "warning": "",
     "wiki_url": "",
-    "tracker_url": "",
+    "doc_url": "https://github.com/UtanoMayonaka/mnmSLBoneGenerator",
+    "tracker_url": "https://github.com/UtanoMayonaka/mnmSLBoneGenerator/issues",
     "category": "Object",
 }
 
+
+import bpy
+
+try:
+    from . import mnm_sl_bone_generator
+except SystemError:
+    import mnm_sl_bone_generator
+
 if "bpy" in locals():
-    import imp
+    from importlib import reload
     if "mnm_sl_bone_generator" in locals():
-        imp.reload(mnm_sl_bone_generator)
-else:
-    from mnmSLBoneGenerator import mnm_sl_bone_generator
+        reload(mnm_sl_bone_generator)
 
 
 ###===================================
 ### import block 
 ###===================================
 
-import bpy
 import os
 from bpy.types import Operator, Panel, PropertyGroup
 from bpy.props import PointerProperty, EnumProperty, StringProperty
@@ -41,7 +47,7 @@ from addon_utils import *
 class MNM_PT_mnm_slbg(Panel):
     bl_label = "MnM SLbg"
     bl_idname = "MNM_PT_" + ADDON_NAME
-    bl_description = "Create a amature, and bones group from SL bento skeleton"
+    bl_description = "Create a amature, and bones from SL bento skeleton (need to avatar_skeleton.xml)."
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_order = 0
@@ -59,13 +65,13 @@ class MNM_PT_mnm_slbg(Panel):
             box.label(text='Generate SL Bones group')
         else:
             box = draw_layout.box()
-            box.label(text='File not exists. Require avatar_skeleton.xml.')
+            box.label(text='File not exists. Require avatar_skeleton.xml (file is in under official browser ./character directory).')
     #END def
 #END class
 
 class MNM_OT_mnm_slbg(Operator):
     bl_idname = ADDON_OPERATOR_IDNAME
-    bl_label = "SL bones group generator"
+    bl_label = "SL bones generator"
     bl_description = "Add armature, and generate SL bones group."
     bl_options = {'REGISTER', 'UNDO'}
 
