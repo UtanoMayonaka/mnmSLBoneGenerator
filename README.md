@@ -6,7 +6,7 @@ Generate Base bones, Extended bones and collision volume bones, from aveter_skel
 ## Getting started
 Download zip file (file name is mnmSLBoneGenerator-master.zip, maybe). ATTENTION DONT UNZIP DOWNLOAD FILE.  
 Install add-ons in preferences menu. click install button and select downloaded a zip file.  
-This plugin are set "testing" category. click checkbox to enabled this plugin.  
+Click checkbox to enabled this plugin.  
 
 The "MnMSLbg" tab appears in 3DView Toolshelf (click N key).
 
