@@ -24,12 +24,16 @@ This plugin are find the xml file and enabled generate button.
 
 ![3DVenabled generate button](assets/image2.jpg "enabled generate button")
 
-## Bone groups
+## Bone Collections (Bone groups)
 
-Each generated bone is set in a bone group.
+Each generated bone is set in a bone collection.
 
-Base bone is set "Base" bone group and layer 2(Blue color).  
-Extended bones is set "Extended" bone group and layer 3(Green color).  
-Collision volume is set "Collision" bone group and layer 7(Orange color).  
+Base bone is set "Base" bone collection (Blue color).  
+Extended bones is set "Extended" bone collection (Green color).  
+Collision volume is set "Collision" bone collection (Red color).
 
-![bone group and layer](assets/image3.jpg "bone group and layer")
+![bone collections (bone group)](assets/image3.jpg "bone collections (bone group)")
+
+Bone collection is can toggle hide and visible on armature data property panel.
+
+![bone collection is can toggle hide and visible](assets/image4.jpg "bone collection is can toggle hide and visible")
